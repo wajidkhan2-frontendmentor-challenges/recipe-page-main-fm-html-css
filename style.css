@@ -1,0 +1,203 @@
+:root {
+    --clr-primary-1: hsl(14, 45%, 36%); /* Nutmeg */
+    --clr-primary-2:hsl(332, 51%, 32%); /* Dark Raspberry */
+    /*  */
+    --clr-neutral-1: hsl(0, 0%, 100%); /* White */
+    --clr-neutral-2: hsl(330, 100%, 98%); /* Rose White */
+    --clr-neutral-3: hsl(30, 54%, 90%); /* Eggshell */
+    --clr-neutral-4: hsl(30, 18%, 87%); /* Light Grey */
+    --clr-neutral-5: hsl(30, 10%, 34%); /* Wenge Brown */
+    --clr-neutral-6: hsl(24, 5%, 18%); /* Dark Charcoal */
+
+    --fs-par: 16px;
+    --ff-heading: 'young-serif', serif;
+    --ff-par: "Outfit", sans-serif;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+}
+
+@font-face {
+    font-family: outfit;
+    src: url('./assets/fonts/outfit/Outfit-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: young-serif;
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf');
+}
+
+.bg-neutral-1 { background-color: var(--clr-neutral-1); }
+.bg-neutral-2 { background-color: var(--clr-neutral-2); }
+
+.ff-par { font-family: var(--ff-par); }
+.ff-head { font-family: var(--ff-heading); }
+
+.txt-clr-p-1 { color: var(--clr-primary-1); }
+.txt-clr-p-2 { color: var(--clr-primary-2); }
+
+.txt-clr-n-4 { color: var(--clr-neutral-4); }
+.txt-clr-n-5 { color: var(--clr-neutral-5); }
+.txt-clr-n-6 { color: var(--clr-neutral-6); }
+
+.fw-regular { font-weight: var(--fw-regular);}
+.fw-semibold { font-weight: var(--fw-semibold);}
+.fw-bold { font-weight: var(--fw-bold);}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-neutral-3);
+    font-size: var(--fs-par);
+    /* color: hsl(hue, saturation, lightness); */
+}
+
+/* .main-container {
+    
+} */
+
+.doc-img {
+    display: block;
+    width: 100%;
+}
+
+.doc-data {
+    padding: 31px;
+}
+
+.prep-time {
+    border-radius: 10px;
+    padding: 23px;
+    margin-block: 37px;
+}
+
+.heading-1 {
+    font-size: 37px; /* 40px before */
+    line-height: 1;
+    margin-block: 0;
+    margin-bottom: 30px;
+}
+.heading-2 {
+    font-size: 28px;
+    line-height: 1;
+    margin-block: 0;
+    margin-bottom: 30px;
+}
+.heading-3 {
+    font-size: 18px;
+    line-height: 1;
+    margin-block: 0;
+    margin-bottom: 20px;
+}
+
+.paragraph {
+    font-size: var(--fs-par);
+    line-height: 1.38;
+}
+
+.cstom-ul {
+    --c-ul-pad-l: 40px;
+    --bullet-size: 5px;
+    list-style-type: none;
+    padding-left: var(--c-ul-pad-l);
+    margin: 0;
+}
+
+.cstom-ul > li {
+    position: relative;
+    margin-block: 10px;
+
+}
+
+.cstom-ul > li::before {
+    content: '';
+    display: block;
+    /* background-color: var(--clr-primary-2); */
+    width:  var(--bullet-size);
+    height: var(--bullet-size);
+    border-radius: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: calc(6px - var(--c-ul-pad-l) );
+    transform: translate(0%,-50%);
+}
+.bullet-clr-primary-1 > li::before {
+    background-color: var(--clr-primary-1);
+}
+.bullet-clr-primary-2 > li::before {
+    background-color: var(--clr-primary-2);
+}
+
+.cstom-ol {
+    --c-ol-pad-l: 40px;
+
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    padding-left: var(--c-ol-pad-l);
+}
+
+.cstom-ol > li {
+    margin-block: 16px;
+    counter-increment: my-awesome-counter;
+    position: relative;
+    line-height: 1.37;
+}
+
+.cstom-ol > li::before {
+    content: counter(my-awesome-counter) ". ";
+    color: var(--clr-primary-1);
+    font-weight: var(--fw-bold);
+
+    position: absolute;
+    left: calc(6px - var(--c-ol-pad-l));
+    top: 0;
+}
+
+.n-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.n-table tr {
+    border-bottom: 1px solid var(--clr-neutral-4);
+}
+
+.n-table tr:last-child {
+    border: none;
+}
+
+.n-table td {
+    padding-block: 10px;
+}
+
+.cstom-hr {
+    border: none;
+    border-top: 1px solid var(--clr-neutral-4);
+    margin-block: 40px;
+}
+
+
+@media only screen and (min-width: 881px) {
+    .main-container {
+        width: 736px;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .doc-img {
+        border-radius: 12px;
+    }
+
+    .doc-data { 
+        padding: 0;
+        padding-top: 32px;
+    }
+
+    .centerxy {
+        margin-inline: auto;
+        margin-block: 100px;
+    }
+    
+}
